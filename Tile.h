@@ -5,8 +5,8 @@
 class Tile
 {
 public:
-	int getNum();
-	bool isEmpty();
+	int getNum() const;
+	bool isEmpty() const;
 
 	Tile() = default;
 	explicit Tile(int num) : number{ num } {};
