@@ -35,7 +35,7 @@ Direction::Direction(Type type) : m_type {type}
 
 Direction Direction::getRandomDirection()
 {
-    Type type{ static_cast<Type>(Random::get(0,Type::numberOfDirections - 1)) };
+    Type type{ static_cast<Type>(Random::get(0,static_cast<int>(Type::numberOfDirections) - 1)) };
     return Direction{ type };
 }
 

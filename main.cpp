@@ -40,10 +40,10 @@ namespace UserInput {
 
     Direction getDirectionFromChar(char dir) {
         switch (dir) {
-        case 'w': return Direction(Direction::up);
-        case 'a': return Direction(Direction::left);
-        case 's': return Direction(Direction::down);
-        case 'd': return Direction(Direction::right);
+        case 'w': return Direction(Direction::Type::up);
+        case 'a': return Direction(Direction::Type::left);
+        case 's': return Direction(Direction::Type::down);
+        case 'd': return Direction(Direction::Type::right);
         default: throw std::logic_error("Invalid input for direction conversion");
         }
     }

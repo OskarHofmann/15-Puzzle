@@ -4,7 +4,7 @@
 class Direction
 {
 public:
-    enum Type {
+    enum class Type {
         up,
         down,
         left,
