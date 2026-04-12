@@ -1,4 +1,6 @@
-#pragma once
+#ifndef DIRECTION_H
+#define DIRECTION_H
+
 #include <iostream>
 
 class Direction
@@ -27,3 +29,4 @@ private:
 
 };
 
+#endif

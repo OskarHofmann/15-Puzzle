@@ -1,4 +1,6 @@
-#pragma once
+#ifndef BOARD_H
+#define BOARD_H
+
 #include "Tile.h"
 #include <iostream>
 #include <array>
@@ -48,3 +50,5 @@ std::ostream& operator<<(std::ostream& out, const Board<M>& board)
 	}
 	return out;
 }
+
+#endif
