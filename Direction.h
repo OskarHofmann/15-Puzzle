@@ -15,7 +15,7 @@ public:
     };
 
     Direction() = delete;
-    explicit Direction(Type type);
+    Direction(Type type);
 
     Type getType() const { return m_type; };
 
