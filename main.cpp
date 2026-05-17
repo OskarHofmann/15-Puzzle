@@ -9,13 +9,7 @@ int main()
     Board<4> board;
     std::cout << board;
 
-    for (int i = 0; i < 4; ++i) {
-        std::cout << "Generation random direction..." << Direction::getRandomDirection() << '\n';
-    }
-
-    std::cout << board.getEmptyPosition() << '\n';
-
-    std::cout << "Enter a command: ";
+    std::cout << "Enter a command: (w: up, a: left, s: down, d: right, q: quit)  ";
     char input;
     while (true) {
         input = UserInput::getUserInput();
@@ -23,8 +17,12 @@ int main()
             break;
         }
         Direction direction = UserInput::getDirectionFromChar(input);
-        std::cout << "You entered a direction: " << direction <<'\n';
-
+        if (board.moveTile(direction)) {
+            std::cout << board;
+        }
+        else {
+            std::cout << "Invalid move. Try again." << '\n';
+        }
 
     }
     std::cout << "\n\nBye!\n";

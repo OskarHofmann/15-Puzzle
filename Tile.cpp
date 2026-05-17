@@ -14,7 +14,7 @@ bool Tile::isEmpty() const
 std::ostream& operator<<(std::ostream& out, const Tile& tile)
 {
 	if (tile.isEmpty()) {
-		out << "   ";
+		out << "    ";
 		return out;
 	}
 	std::string tile_print{ " " };
