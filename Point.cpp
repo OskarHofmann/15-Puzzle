@@ -15,3 +15,8 @@ Point Point::getAdjacentPoint(const Direction& direction)
         throw std::logic_error("Direction types other than up, down, left or right should not be possible.");
     }
 }
+
+std::ostream& operator<<(std::ostream& out, const Point& point) {
+    out << '(' << point.getX() << ',' << point.getY() << ")\n";
+    return out;
+}

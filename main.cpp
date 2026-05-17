@@ -13,6 +13,8 @@ int main()
         std::cout << "Generation random direction..." << Direction::getRandomDirection() << '\n';
     }
 
+    std::cout << board.getEmptyPosition() << '\n';
+
     std::cout << "Enter a command: ";
     char input;
     while (true) {

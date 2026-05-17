@@ -2,8 +2,10 @@
 #define BOARD_H
 
 #include "Tile.h"
+#include "Point.h"
 #include <iostream>
 #include <array>
+#include <stdexcept>
 
 constexpr int g_consoleLines{ 25 };
 
@@ -12,6 +14,8 @@ class Board
 {
 public:
 	Board();
+
+	Point getEmptyPosition() const;
 
 	template <std::size_t M>
 	friend std::ostream& operator<<(std::ostream& out, const Board<M>& board);
@@ -35,6 +39,20 @@ Board<N>::Board()
 		}
 	}
 }
+
+template<std::size_t N>
+Point Board<N>::getEmptyPosition() const {
+
+	for (std::size_t line{ 0 }; line < N; ++line) {
+		for (std::size_t row{ 0 }; row < N; ++row) {
+			if (tiles[line][row].isEmpty()) {
+				return Point(static_cast<int>(row), static_cast<int>(line));
+			}
+		}
+	}
+	// there should always be an empty position
+	throw std::logic_error("No empty position in board found.");
+ }
 
 template <std::size_t M>
 std::ostream& operator<<(std::ostream& out, const Board<M>& board)
